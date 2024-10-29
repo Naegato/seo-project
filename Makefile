@@ -7,4 +7,4 @@ cmd:
 	docker compose exec node bash
 
 deploy:
-	docker compose -f docker-compose.override.yaml up
+	docker compose -f docker-compose.override.yaml up --remove-orphans -d
