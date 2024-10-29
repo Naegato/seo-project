@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type {Metadata, Viewport} from "next";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -6,6 +6,7 @@ import theme from '@/theme';
 import './style.scss';
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.bytemeuh.com"),
   title: "Bytemeuh - La Création Visuelle avec une Touche d'Humour",
   description: "Bytemeuh, un site innovant qui fusionne technologie, créativité et humour. Découvrez comment des créations visuelles prennent vie et les astuces pour les réaliser.",
   keywords: ["Bytemeuh", "création visuelle", "art digital", "humour tech", "articles créatifs", "images uniques"],
@@ -31,11 +32,15 @@ export const metadata: Metadata = {
     description: "Explorez Bytemeuh pour découvrir des images uniques et des explications sur leur création, dans un esprit décalé et geek.",
     images: ["/BYtemeuhLogo.webp"], // Chemin de l'image pour Twitter
   },
-  viewport: "width=device-width, initial-scale=1.0",
   icons: {
     icon: "/favicon.ico",
   },
 };
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+}
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return <html lang="fr">
